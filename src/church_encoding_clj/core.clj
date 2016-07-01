@@ -1,6 +1,16 @@
 (ns church-encoding-clj.core)
 
-(defn foo
-  "I don't do a whole lot."
-  [x]
-  (println x "Hello, World!"))
+(defn church->integer [x]
+  ((x inc) 0))
+
+(defn zero [f]
+  (fn [x] x))
+
+(defn one [f]
+  (fn [x] (f x)))
+
+(defn two [f]
+  (fn [x] (f (f x))))
+
+(defn three [f]
+  (fn [x] (f (f (f x)))))
