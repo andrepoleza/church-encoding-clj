@@ -15,6 +15,10 @@
 (defn three [f]
   (fn [x] (f (f (f x)))))
 
+(defn successor [n]
+  (fn [f]
+    (fn [x] (f ((n f) x)))))
+
 (defn true-function [first]
   (fn [second] first))
 
