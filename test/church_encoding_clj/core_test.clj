@@ -17,3 +17,11 @@
 (deftest three-function
   (testing "three is a function that corresponds to 3"
     (is (= (church->integer three) 3))))
+
+(deftest true-function-test
+  (testing "true is a function that takes two parameters and always chooses the first one"
+    (is (= ((true-function true) false) true))))
+
+(deftest false-function-test
+  (testing "false is a function that takes two parameters and always chooses the second one"
+    (is (= ((false-function true) false) false))))

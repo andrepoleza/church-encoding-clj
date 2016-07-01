@@ -14,3 +14,9 @@
 
 (defn three [f]
   (fn [x] (f (f (f x)))))
+
+(defn true-function [first]
+  (fn [second] first))
+
+(defn false-function [first]
+  (fn [second] second))
