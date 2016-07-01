@@ -19,6 +19,10 @@
   (fn [f]
     (fn [x] (f ((n f) x)))))
 
+(defn addition [a]
+  (fn [b]
+    ((b successor) a)))
+
 (defn true-function [first]
   (fn [second] first))
 

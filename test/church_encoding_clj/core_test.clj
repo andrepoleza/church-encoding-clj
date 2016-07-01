@@ -27,6 +27,19 @@
     (is (not (= (church->integer (successor zero)) 4)))
     (is (not (= (church->integer (successor three)) 0)))))
 
+(deftest addition-test
+  (testing "addition"
+    (is (= (church->integer ((addition zero) zero)) 0))
+    (is (= (church->integer ((addition zero) one)) 1))
+    (is (= (church->integer ((addition zero) two)) 2))
+    (is (= (church->integer ((addition zero) three)) 3))
+    (is (= (church->integer ((addition one) one)) 2))
+    (is (= (church->integer ((addition one) two)) 3))
+    (is (= (church->integer ((addition one) three)) 4))
+    (is (= (church->integer ((addition two) two)) 4))
+    (is (= (church->integer ((addition two) three)) 5))
+    (is (= (church->integer ((addition three) three)) 6))))
+
 (deftest true-function-test
   (testing "true is a function that takes two parameters and always chooses the first one"
     (is (= ((true-function true) false) true))))
