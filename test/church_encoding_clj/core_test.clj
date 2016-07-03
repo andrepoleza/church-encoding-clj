@@ -80,3 +80,10 @@
     (is (= (is-zero? two) false-function))
     (is (= (is-zero? three) false-function))
     (is (= (is-zero? (successor three)) false-function))))
+
+(deftest or-function-test
+  (testing "or"
+    (is (= ((or-function true-function) true-function) true-function))
+    (is (= ((or-function true-function) false-function) true-function))
+    (is (= ((or-function false-function) true-function) true-function))
+    (is (= ((or-function false-function) false-function) false-function))))

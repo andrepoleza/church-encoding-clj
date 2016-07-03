@@ -41,3 +41,7 @@
 
 (defn is-zero? [n]
   ((n (fn [x] false-function)) true-function))
+
+(defn or-function [first]
+  (fn [second]
+    ((first true-function) second)))
