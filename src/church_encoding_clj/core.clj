@@ -23,6 +23,12 @@
   (fn [b]
     ((b successor) a)))
 
+(defn multiplication [a]
+  (fn [b]
+    (fn [f]
+      (fn [x]
+        ((a (b f)) x)))))
+
 (defn true-function [first]
   (fn [second] first))
 

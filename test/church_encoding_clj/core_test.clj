@@ -40,6 +40,19 @@
     (is (= (church->integer ((addition two) three)) 5))
     (is (= (church->integer ((addition three) three)) 6))))
 
+(deftest multiplication-test
+  (testing "multiplication"
+    (is (= (church->integer ((multiplication zero) zero)) 0))
+    (is (= (church->integer ((multiplication zero) one)) 0))
+    (is (= (church->integer ((multiplication zero) two)) 0))
+    (is (= (church->integer ((multiplication zero) three)) 0))
+    (is (= (church->integer ((multiplication one) one)) 1))
+    (is (= (church->integer ((multiplication one) two)) 2))
+    (is (= (church->integer ((multiplication one) three)) 3))
+    (is (= (church->integer ((multiplication two) two)) 4))
+    (is (= (church->integer ((multiplication two) three)) 6))
+    (is (= (church->integer ((multiplication three) three)) 9))))
+
 (deftest true-function-test
   (testing "true is a function that takes two parameters and always chooses the first one"
     (is (= ((true-function true) false) true))))
