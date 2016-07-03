@@ -45,3 +45,7 @@
 (defn or-function [first]
   (fn [second]
     ((first true-function) second)))
+
+(defn and-function [first]
+  (fn [second]
+    ((first second) false-function)))

@@ -87,3 +87,10 @@
     (is (= ((or-function true-function) false-function) true-function))
     (is (= ((or-function false-function) true-function) true-function))
     (is (= ((or-function false-function) false-function) false-function))))
+
+(deftest and-function-test
+  (testing "and"
+    (is (= ((and-function true-function) true-function) true-function))
+    (is (= ((and-function true-function) false-function) false-function))
+    (is (= ((and-function false-function) true-function) false-function))
+    (is (= ((and-function false-function) false-function) false-function))))
