@@ -27,6 +27,13 @@
     (is (not (= (church->integer (successor zero)) 4)))
     (is (not (= (church->integer (successor three)) 0)))))
 
+(deftest integer->church-test
+  (testing "integer->church"
+    (is (= (church->integer (integer->church 0)) 0))
+    (is (= (church->integer (integer->church 1)) 1))
+    (is (= (church->integer (integer->church 2)) 2))
+    (is (= (church->integer (integer->church 3)) 3))))
+
 (deftest addition-test
   (testing "addition"
     (is (= (church->integer ((addition zero) zero)) 0))

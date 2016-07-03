@@ -1,8 +1,5 @@
 (ns church-encoding-clj.core)
 
-(defn church->integer [x]
-  ((x inc) 0))
-
 (defn zero [f]
   (fn [x] x))
 
@@ -18,6 +15,14 @@
 (defn successor [n]
   (fn [f]
     (fn [x] (f ((n f) x)))))
+
+(defn church->integer [x]
+  ((x inc) 0))
+
+(defn integer->church [x]
+  (if (= x 0)
+    zero
+    (successor (integer->church (dec x)))))
 
 (defn addition [a]
   (fn [b]
