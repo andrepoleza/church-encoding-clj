@@ -29,6 +29,10 @@
       (fn [x]
         ((a (b f)) x)))))
 
+(defn exponentiation [a]
+  (fn [b]
+    (b a)))
+
 (defn true-function [first]
   (fn [second] first))
 

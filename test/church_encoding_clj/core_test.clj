@@ -53,6 +53,18 @@
     (is (= (church->integer ((multiplication two) three)) 6))
     (is (= (church->integer ((multiplication three) three)) 9))))
 
+(deftest exponentiation-test
+  (testing "exponentiation"
+    (is (= (church->integer ((exponentiation one) one)) 1))
+    (is (= (church->integer ((exponentiation one) two)) 1))
+    (is (= (church->integer ((exponentiation one) three)) 1))
+    (is (= (church->integer ((exponentiation two) one)) 2))
+    (is (= (church->integer ((exponentiation two) two)) 4))
+    (is (= (church->integer ((exponentiation two) three)) 8))
+    (is (= (church->integer ((exponentiation three) one)) 3))
+    (is (= (church->integer ((exponentiation three) two)) 9))
+    (is (= (church->integer ((exponentiation three) three)) 27))))
+
 (deftest true-function-test
   (testing "true is a function that takes two parameters and always chooses the first one"
     (is (= ((true-function true) false) true))))
