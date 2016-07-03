@@ -38,3 +38,6 @@
 
 (defn false-function [first]
   (fn [second] second))
+
+(defn is-zero? [n]
+  ((n (fn [x] false-function)) true-function))

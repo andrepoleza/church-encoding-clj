@@ -72,3 +72,11 @@
 (deftest false-function-test
   (testing "false is a function that takes two parameters and always chooses the second one"
     (is (= ((false-function true) false) false))))
+
+(deftest is-zero?-test
+  (testing "is-zero?"
+    (is (= (is-zero? zero) true-function))
+    (is (= (is-zero? one) false-function))
+    (is (= (is-zero? two) false-function))
+    (is (= (is-zero? three) false-function))
+    (is (= (is-zero? (successor three)) false-function))))
