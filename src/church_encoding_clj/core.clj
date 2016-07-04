@@ -111,3 +111,7 @@
 (defn is-less? [first]
   (fn [second]
     (not-function ((is-greater-or-equal? first) second))))
+
+(defn is-greater? [first]
+  (fn [second]
+    (not-function ((is-less-or-equal? first) second))))

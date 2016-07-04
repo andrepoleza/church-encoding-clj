@@ -211,3 +211,22 @@
     (is (= ((is-less? three) one) false-function))
     (is (= ((is-less? three) two) false-function))
     (is (= ((is-less? three) three) false-function))))
+
+(deftest is-greater?-test
+  (testing "is-greater?"
+    (is (= ((is-greater? zero) zero) false-function))
+    (is (= ((is-greater? zero) one) false-function))
+    (is (= ((is-greater? zero) two) false-function))
+    (is (= ((is-greater? zero) three) false-function))
+    (is (= ((is-greater? one) zero) true-function))
+    (is (= ((is-greater? one) one) false-function))
+    (is (= ((is-greater? one) two) false-function))
+    (is (= ((is-greater? one) three) false-function))
+    (is (= ((is-greater? two) zero) true-function))
+    (is (= ((is-greater? two) one) true-function))
+    (is (= ((is-greater? two) two) false-function))
+    (is (= ((is-greater? two) three) false-function))
+    (is (= ((is-greater? three) zero) true-function))
+    (is (= ((is-greater? three) one) true-function))
+    (is (= ((is-greater? three) two) true-function))
+    (is (= ((is-greater? three) three) false-function))))
