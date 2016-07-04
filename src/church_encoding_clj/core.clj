@@ -73,3 +73,8 @@
 
 (defn not-function [x]
   ((x false-function) true-function))
+
+(defn nor-function [first]
+  (fn [second]
+    (not-function ((or-function first) second))))
+  

@@ -126,3 +126,10 @@
   (testing "not"
     (is (= (not-function true-function) false-function))
     (is (= (not-function false-function) true-function))))
+
+(deftest nor-function-test
+  (testing "nor"
+    (is (= ((nor-function true-function) true-function) false-function))
+    (is (= ((nor-function true-function) false-function) false-function))
+    (is (= ((nor-function false-function) true-function) false-function))
+    (is (= ((nor-function false-function) false-function) true-function))))
