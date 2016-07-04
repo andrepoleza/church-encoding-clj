@@ -121,3 +121,8 @@
     ((and-function
       ((is-less-or-equal? first) second))
       ((is-greater-or-equal? first) second))))
+
+(defn not-equal? [first]
+  (fn [second]
+    (not-function
+      ((are-equal? first) second))))

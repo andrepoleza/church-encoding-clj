@@ -249,3 +249,22 @@
     (is (= ((are-equal? three) one) false-function))
     (is (= ((are-equal? three) two) false-function))
     (is (= ((are-equal? three) three) true-function))))
+
+(deftest not-equal?-test
+  (testing "not-equal?"
+    (is (= ((not-equal? zero) zero) false-function))
+    (is (= ((not-equal? zero) one) true-function))
+    (is (= ((not-equal? zero) two) true-function))
+    (is (= ((not-equal? zero) three) true-function))
+    (is (= ((not-equal? one) zero) true-function))
+    (is (= ((not-equal? one) one) false-function))
+    (is (= ((not-equal? one) two) true-function))
+    (is (= ((not-equal? one) three) true-function))
+    (is (= ((not-equal? two) zero) true-function))
+    (is (= ((not-equal? two) one) true-function))
+    (is (= ((not-equal? two) two) false-function))
+    (is (= ((not-equal? two) three) true-function))
+    (is (= ((not-equal? three) zero) true-function))
+    (is (= ((not-equal? three) one) true-function))
+    (is (= ((not-equal? three) two) true-function))
+    (is (= ((not-equal? three) three) false-function))))
