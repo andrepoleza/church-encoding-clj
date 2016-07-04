@@ -140,3 +140,10 @@
     (is (= ((nand-function true-function) false-function) true-function))
     (is (= ((nand-function false-function) true-function) true-function))
     (is (= ((nand-function false-function) false-function) true-function))))
+
+(deftest xor-function-test
+  (testing "xor"
+    (is (= ((xor-function true-function) true-function) false-function))
+    (is (= ((xor-function true-function) false-function) true-function))
+    (is (= ((xor-function false-function) true-function) true-function))
+    (is (= ((xor-function false-function) false-function) false-function))))

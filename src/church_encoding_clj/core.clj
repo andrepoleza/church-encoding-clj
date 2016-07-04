@@ -81,3 +81,8 @@
 (defn nand-function [first]
   (fn [second]
     (not-function ((and-function first) second))))
+
+(defn xor-function [first]
+  (fn [second]
+    ((first
+      ((second false-function) true-function)) ((second true-function) false-function))))
