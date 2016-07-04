@@ -121,3 +121,8 @@
     (is (= ((and-function true-function) false-function) false-function))
     (is (= ((and-function false-function) true-function) false-function))
     (is (= ((and-function false-function) false-function) false-function))))
+
+(deftest not-function-test
+  (testing "not"
+    (is (= (not-function true-function) false-function))
+    (is (= (not-function false-function) true-function))))

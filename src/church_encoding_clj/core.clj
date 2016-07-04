@@ -20,13 +20,13 @@
   (fn [f]
     (fn [x]
       (((n
-        (fn [g]
-          (fn [h]
-            (h (g f)))))
+         (fn [g]
+           (fn [h]
+             (h (g f)))))
         (fn [u]
           x))
-        (fn [u]
-          u)))))
+       (fn [u]
+         u)))))
 
 (defn church->integer [x]
   ((x inc) 0))
@@ -70,3 +70,6 @@
 (defn and-function [first]
   (fn [second]
     ((first second) false-function)))
+
+(defn not-function [x]
+  ((x false-function) true-function))
