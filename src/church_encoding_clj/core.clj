@@ -77,4 +77,7 @@
 (defn nor-function [first]
   (fn [second]
     (not-function ((or-function first) second))))
-  
+
+(defn nand-function [first]
+  (fn [second]
+    (not-function ((and-function first) second))))

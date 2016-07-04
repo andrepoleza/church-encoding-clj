@@ -133,3 +133,10 @@
     (is (= ((nor-function true-function) false-function) false-function))
     (is (= ((nor-function false-function) true-function) false-function))
     (is (= ((nor-function false-function) false-function) true-function))))
+
+(deftest nand-function-test
+  (testing "nand"
+    (is (= ((nand-function true-function) true-function) false-function))
+    (is (= ((nand-function true-function) false-function) true-function))
+    (is (= ((nand-function false-function) true-function) true-function))
+    (is (= ((nand-function false-function) false-function) true-function))))
