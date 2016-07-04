@@ -1,20 +1,25 @@
 (ns church-encoding-clj.core)
 
 (defn zero [f]
-  (fn [x] x))
+  (fn [x]
+    x))
 
 (defn one [f]
-  (fn [x] (f x)))
+  (fn [x]
+    (f x)))
 
 (defn two [f]
-  (fn [x] (f (f x))))
+  (fn [x]
+    (f (f x))))
 
 (defn three [f]
-  (fn [x] (f (f (f x)))))
+  (fn [x]
+    (f (f (f x)))))
 
 (defn successor [n]
   (fn [f]
-    (fn [x] (f ((n f) x)))))
+    (fn [x]
+      (f ((n f) x)))))
 
 (defn predecessor [n]
   (fn [f]
@@ -55,13 +60,17 @@
     (b a)))
 
 (defn true-function [first]
-  (fn [second] first))
+  (fn [second]
+    first))
 
 (defn false-function [first]
-  (fn [second] second))
+  (fn [second]
+    second))
 
 (defn is-zero? [n]
-  ((n (fn [x] false-function)) true-function))
+  ((n
+    (fn [x]
+      false-function)) true-function))
 
 (defn or-function [first]
   (fn [second]
