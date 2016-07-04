@@ -99,3 +99,7 @@
 (defn xnor-function [first]
   (fn [second]
     (not-function ((xor-function first) second))))
+
+(defn is-less-or-equal? [first]
+  (fn [second]
+    (is-zero? ((subtraction first) second))))

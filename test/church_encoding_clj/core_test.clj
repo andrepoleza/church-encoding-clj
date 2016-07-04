@@ -154,3 +154,22 @@
     (is (= ((xnor-function true-function) false-function) false-function))
     (is (= ((xnor-function false-function) true-function) false-function))
     (is (= ((xnor-function false-function) false-function) true-function))))
+
+(deftest is-less-or-equal?-test
+  (testing "is-less-or-equal?"
+    (is (= ((is-less-or-equal? zero) zero) true-function))
+    (is (= ((is-less-or-equal? zero) one) true-function))
+    (is (= ((is-less-or-equal? zero) two) true-function))
+    (is (= ((is-less-or-equal? zero) three) true-function))
+    (is (= ((is-less-or-equal? one) zero) false-function))
+    (is (= ((is-less-or-equal? one) one) true-function))
+    (is (= ((is-less-or-equal? one) two) true-function))
+    (is (= ((is-less-or-equal? one) three) true-function))
+    (is (= ((is-less-or-equal? two) zero) false-function))
+    (is (= ((is-less-or-equal? two) one) false-function))
+    (is (= ((is-less-or-equal? two) two) true-function))
+    (is (= ((is-less-or-equal? two) three) true-function))
+    (is (= ((is-less-or-equal? three) zero) false-function))
+    (is (= ((is-less-or-equal? three) one) false-function))
+    (is (= ((is-less-or-equal? three) two) false-function))
+    (is (= ((is-less-or-equal? three) three) true-function))))
