@@ -107,3 +107,7 @@
 (defn is-greater-or-equal? [first]
   (fn [second]
     (is-zero? ((subtraction second) first))))
+
+(defn is-less? [first]
+  (fn [second]
+    (not-function ((is-greater-or-equal? first) second))))

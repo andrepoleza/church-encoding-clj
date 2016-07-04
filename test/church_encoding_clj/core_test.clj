@@ -192,3 +192,22 @@
     (is (= ((is-greater-or-equal? three) one) true-function))
     (is (= ((is-greater-or-equal? three) two) true-function))
     (is (= ((is-greater-or-equal? three) three) true-function))))
+
+(deftest is-less?-test
+  (testing "is-less?"
+    (is (= ((is-less? zero) zero) false-function))
+    (is (= ((is-less? zero) one) true-function))
+    (is (= ((is-less? zero) two) true-function))
+    (is (= ((is-less? zero) three) true-function))
+    (is (= ((is-less? one) zero) false-function))
+    (is (= ((is-less? one) one) false-function))
+    (is (= ((is-less? one) two) true-function))
+    (is (= ((is-less? one) three) true-function))
+    (is (= ((is-less? two) zero) false-function))
+    (is (= ((is-less? two) one) false-function))
+    (is (= ((is-less? two) two) false-function))
+    (is (= ((is-less? two) three) true-function))
+    (is (= ((is-less? three) zero) false-function))
+    (is (= ((is-less? three) one) false-function))
+    (is (= ((is-less? three) two) false-function))
+    (is (= ((is-less? three) three) false-function))))
