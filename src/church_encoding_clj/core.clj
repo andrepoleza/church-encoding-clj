@@ -16,6 +16,18 @@
   (fn [f]
     (fn [x] (f ((n f) x)))))
 
+(defn predecessor [n]
+  (fn [f]
+    (fn [x]
+      (((n
+        (fn [g]
+          (fn [h]
+            (h (g f)))))
+        (fn [u]
+          x))
+        (fn [u]
+          u)))))
+
 (defn church->integer [x]
   ((x inc) 0))
 

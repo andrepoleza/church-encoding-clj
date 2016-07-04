@@ -27,6 +27,13 @@
     (is (not (= (church->integer (successor zero)) 4)))
     (is (not (= (church->integer (successor three)) 0)))))
 
+(deftest predecessor-test
+  (testing "predecessor is a function that takes an argument and decrements it by 1"
+    (is (= (church->integer (predecessor one)) 0))
+    (is (= (church->integer (predecessor two)) 1))
+    (is (= (church->integer (predecessor three)) 2))
+    (is (= (church->integer (predecessor (successor three))) 3))))
+
 (deftest integer->church-test
   (testing "integer->church"
     (is (= (church->integer (integer->church 0)) 0))
