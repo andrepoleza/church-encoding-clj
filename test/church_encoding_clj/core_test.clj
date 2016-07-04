@@ -54,6 +54,19 @@
     (is (= (church->integer ((addition two) three)) 5))
     (is (= (church->integer ((addition three) three)) 6))))
 
+(deftest subtraction-test
+  (testing "subtraction"
+    (is (= (church->integer ((subtraction zero) zero)) 0))
+    (is (= (church->integer ((subtraction one) one)) 0))
+    (is (= (church->integer ((subtraction two) two)) 0))
+    (is (= (church->integer ((subtraction three) three)) 0))
+    (is (= (church->integer ((subtraction three) zero)) 3))
+    (is (= (church->integer ((subtraction three) one)) 2))
+    (is (= (church->integer ((subtraction three) two)) 1))
+    (is (= (church->integer ((subtraction two) zero)) 2))
+    (is (= (church->integer ((subtraction two) one)) 1))
+    (is (= (church->integer ((subtraction one) zero)) 1))))
+
 (deftest multiplication-test
   (testing "multiplication"
     (is (= (church->integer ((multiplication zero) zero)) 0))

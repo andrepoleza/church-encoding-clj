@@ -40,6 +40,10 @@
   (fn [b]
     ((b successor) a)))
 
+(defn subtraction [a]
+  (fn [b]
+    ((b predecessor) a)))
+
 (defn multiplication [a]
   (fn [b]
     (fn [f]
