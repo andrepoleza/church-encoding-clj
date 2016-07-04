@@ -115,3 +115,9 @@
 (defn is-greater? [first]
   (fn [second]
     (not-function ((is-less-or-equal? first) second))))
+
+(defn are-equal? [first]
+  (fn [second]
+    ((and-function
+      ((is-less-or-equal? first) second))
+      ((is-greater-or-equal? first) second))))

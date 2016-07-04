@@ -230,3 +230,22 @@
     (is (= ((is-greater? three) one) true-function))
     (is (= ((is-greater? three) two) true-function))
     (is (= ((is-greater? three) three) false-function))))
+
+(deftest are-equal?-test
+  (testing "are-equal?"
+    (is (= ((are-equal? zero) zero) true-function))
+    (is (= ((are-equal? zero) one) false-function))
+    (is (= ((are-equal? zero) two) false-function))
+    (is (= ((are-equal? zero) three) false-function))
+    (is (= ((are-equal? one) zero) false-function))
+    (is (= ((are-equal? one) one) true-function))
+    (is (= ((are-equal? one) two) false-function))
+    (is (= ((are-equal? one) three) false-function))
+    (is (= ((are-equal? two) zero) false-function))
+    (is (= ((are-equal? two) one) false-function))
+    (is (= ((are-equal? two) two) true-function))
+    (is (= ((are-equal? two) three) false-function))
+    (is (= ((are-equal? three) zero) false-function))
+    (is (= ((are-equal? three) one) false-function))
+    (is (= ((are-equal? three) two) false-function))
+    (is (= ((are-equal? three) three) true-function))))
