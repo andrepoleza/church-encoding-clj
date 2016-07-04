@@ -86,3 +86,7 @@
   (fn [second]
     ((first
       ((second false-function) true-function)) ((second true-function) false-function))))
+
+(defn xnor-function [first]
+  (fn [second]
+    (not-function ((xor-function first) second))))

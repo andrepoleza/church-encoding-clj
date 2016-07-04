@@ -147,3 +147,10 @@
     (is (= ((xor-function true-function) false-function) true-function))
     (is (= ((xor-function false-function) true-function) true-function))
     (is (= ((xor-function false-function) false-function) false-function))))
+
+(deftest xnor-function-test
+  (testing "xnor"
+    (is (= ((xnor-function true-function) true-function) true-function))
+    (is (= ((xnor-function true-function) false-function) false-function))
+    (is (= ((xnor-function false-function) true-function) false-function))
+    (is (= ((xnor-function false-function) false-function) true-function))))
