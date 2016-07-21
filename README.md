@@ -1,5 +1,6 @@
 # church-encoding-clj
 [![Build Status](https://travis-ci.org/andrepoleza/church-encoding-clj.svg?branch=master)](https://travis-ci.org/andrepoleza/church-encoding-clj)
+[![Clojars Project](https://img.shields.io/clojars/v/church-encoding-clj.svg)](https://clojars.org/church-encoding-clj)
 
 A Clojure library designed to ... well, that part is up to you.
 
