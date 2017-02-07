@@ -5,8 +5,7 @@
     x))
 
 (defn one [f]
-  (fn [x]
-    (f x)))
+  f)
 
 (defn two [f]
   (fn [x]
@@ -37,7 +36,7 @@
   ((x inc) 0))
 
 (defn integer->church [x]
-  (if (= x 0)
+  (if (zero? x)
     zero
     (successor (integer->church (dec x)))))
 
